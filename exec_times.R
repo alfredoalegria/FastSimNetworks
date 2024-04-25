@@ -7,7 +7,6 @@ source("/sim_algorithms/auxiliary_process.R")
 source("/sim_algorithms/SpectralSim.R")
 source("/sim_algorithms/Dilution2Sim.R")
 source("/sim_algorithms/Dilution1Sim.R")
-source("/basic_functions/plotSim.R")
 set.seed(23);
 
 ## Chicago network
