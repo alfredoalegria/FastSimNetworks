@@ -1,13 +1,15 @@
 library("stlnpp")
 library("sp")
-dyn.load("/Users/alfredo/Desktop/codes_final/basic_functions/c/BB.so")
-source("/Users/alfredo/Desktop/codes_final/basic_functions/r/BB.R")
-source("/Users/alfredo/Desktop/codes_final/basic_functions/functions.R")
-source("/Users/alfredo/Desktop/codes_final/sim_algorithms/auxiliary_process.R")
-source("/Users/alfredo/Desktop/codes_final/sim_algorithms/SpectralSim.R")
-source("/Users/alfredo/Desktop/codes_final/sim_algorithms/Dilution2Sim.R")
-source("/Users/alfredo/Desktop/codes_final/sim_algorithms/Dilution1Sim.R")
-source("/Users/alfredo/Desktop/codes_final/basic_functions/plotSim.R")
+dyn.load("/basic_functions/c/BB.so")
+source("/basic_functions/r/BB.R")
+source("/basic_functions/functions.R")
+source("/basic_functions/plotSim.R")
+source("/sim_algorithms/auxiliary_process.R")
+source("/sim_algorithms/SpectralSim.R")
+source("/sim_algorithms/Dilution1Sim.R")
+source("/sim_algorithms/Dilution2Sim.R")
+
+
 set.seed(23);
 
 ## Chicago network
