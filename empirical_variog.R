@@ -22,7 +22,8 @@ Net=chicago$domain;
 
 nPointsE=rep(4,nsegments(Net));
 sites=genSites(nPointsE);
-sites=sites[sites[,1]*(1-sites[,1])!=0,];
+q=sites[,1]*(1-sites[,1])!=0;
+sites=sites[q,];
 
 ## Laplacian matrix
 
