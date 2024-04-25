@@ -14,28 +14,23 @@ source("/Users/alfredo/Desktop/codes_final/basic_functions/plotSim.R")
 set.seed(23);
 
 ## Chicago network
-
 data(chicago)
 Net=chicago$domain;
 
 ## Generate locations (4 per edge) and select interior points (2 per edge)
-
 nPointsE=rep(4,nsegments(Net));
 sites=genSites(nPointsE);
 q=sites[,1]*(1-sites[,1])!=0;
 sites=sites[q,];
 
 ## Laplacian matrix
-
 invL=solve(laplacian(Net$m,Net$dpath));
 
 ## Matrix of distances
-
 distMat=resistance_metric(nvertices(Net),nrow(sites),sites[,2],sites[,1],
                           c(invL),Net$from,Net$to,lengths_psp(Net$lines));
 
 ## Parameters
-
 scaleParam=0.2;  # correlation parameter
 nCopies=1000;    # M value in the central limit approximation
 nlags=26;        # number of lags for empirical variogram
@@ -58,7 +53,6 @@ for(rep in 1:nrep){
 }
 
 ## T values of the statistical test 
-
 t_value=c();  # t values for variograms
 t_value2=c(); # t values for madograms
 id=c(2,6,11,16,21,26); # lags considered in the experiment (10,50,100,150,200,250)
@@ -71,7 +65,6 @@ for(j in 1:length(id)){
 }
 
 ## Plots (variograms)
-
 xlim=c(0,hmax);
 ylim=c(0,1.2);
 xlab="Distance";
@@ -96,7 +89,6 @@ legend("bottomright",c("Individual realizations","Average over realizations","Th
 col=c("green","red","black"),lty=c(1,NA,1),pch=c(NA,16,NA),cex=1.5,lwd=3)
 
 ## Plots (madograms)
-
 ylab="Semi-madogram";
 ylim=c(0,0.8);
 
