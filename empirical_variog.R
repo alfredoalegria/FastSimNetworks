@@ -40,8 +40,8 @@ nrep=200;        # number of realizations
 algorithm=1;     # 1=spectral; 2=poisson_dilution; 3=germ_dilution
 
 lags=seq(0,hmax,l=nlags);
-vv=array(dim=c(nrep,nlags));  # it contains the empirical variograms
-mm=array(dim=c(nrep,nlags));  # it contains the empirical madograms
+vv=array(dim=c(nrep,nlags));  # it will contain the emp.variog. for each realization
+mm=array(dim=c(nrep,nlags));  # it will contain the emp.madog. for each realization
 
 for(rep in 1:nrep){
    if(algorithm==1){zVec=SimSpec(Net,nPointsE,nCopies,scaleParam)$values;}
