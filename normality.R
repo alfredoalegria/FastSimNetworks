@@ -38,7 +38,7 @@ res1_2=c(); res2_2=c(); res3_2=c(); # proportions of rejections for each algorit
 
 
 for(i in 1:length(level)){
-	pp1_1=0; pp2_1=0; pp3_1=0;
+	pp1_1=0; pp2_1=0; pp3_1=0; # auxiliary variables that count
 	pp1_2=0; pp2_2=0; pp3_2=0;
 	for(k in 1:nShapiro){
         for(j in 1:nsamples){
