@@ -1,16 +1,15 @@
 library("stlnpp")
 library("sp")
-dyn.load("/Users/alfredo/Desktop/codes_final/basic_functions/c/BB.so")
-source("/Users/alfredo/Desktop/codes_final/basic_functions/r/BB.R")
-dyn.load("/Users/alfredo/Desktop/codes_final/basic_functions/c/resistance_metric.so")
-source("/Users/alfredo/Desktop/codes_final/basic_functions/r/resistance_metric.R")
-source("/Users/alfredo/Desktop/codes_final/basic_functions/functions.R")
-source("/Users/alfredo/Desktop/codes_final/basic_functions/empVariog.R")
-source("/Users/alfredo/Desktop/codes_final/sim_algorithms/auxiliary_process.R")
-source("/Users/alfredo/Desktop/codes_final/sim_algorithms/SpectralSim.R")
-source("/Users/alfredo/Desktop/codes_final/sim_algorithms/Dilution2Sim.R")
-source("/Users/alfredo/Desktop/codes_final/sim_algorithms/Dilution1Sim.R")
-source("/Users/alfredo/Desktop/codes_final/basic_functions/plotSim.R")
+dyn.load("/basic_functions/c/BB.so")
+source("/basic_functions/r/BB.R")
+dyn.load("/basic_functions/c/resistance_metric.so")
+source("/basic_functions/r/resistance_metric.R")
+source("/basic_functions/functions.R")
+source("/basic_functions/empVariog.R")
+source("/sim_algorithms/auxiliary_process.R")
+source("/sim_algorithms/SpectralSim.R")
+source("/sim_algorithms/Dilution2Sim.R")
+source("/sim_algorithms/Dilution1Sim.R")
 set.seed(23);
 
 ## Chicago network
@@ -62,3 +61,4 @@ for(j in 1:length(id)){
         t_value[j]= sqrt(199)*(mean(0.5*vv[,id[j]])-aux)/sd(0.5*vv[,id[j]]);
 	t_value2[j]= sqrt(199)*(mean(0.5*mm[,id[j]])-sqrt(aux/pi))/sd(0.5*mm[,id[j]]);
 }
+
