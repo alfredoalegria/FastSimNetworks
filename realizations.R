@@ -10,14 +10,22 @@ source("/Users/alfredo/Desktop/codes_final/sim_algorithms/Dilution1Sim.R")
 source("/Users/alfredo/Desktop/codes_final/basic_functions/plotSim.R")
 set.seed(23);
 
+## Chicago network
 data(chicago);
 Net=chicago$domain;
-nPointsE=rep(200,nsegments(Net));
 
+## Number of target points (200 per edge)
+nPointsE=rep(200,nsegments(Net));  
+
+## Spectral 
 DatSim1=SimSpec(Net,nPointsE,nCopies=1000,scaleParam=0.2);
 p1=plotSim(DatSim1$values,Net,nPointsE)$plot;
+
+## Poisson dilution 
 DatSim2=SimDilution1(Net,nPointsE,nCopies=1000,scaleParam=0.2);
 p2=plotSim(DatSim2$values,Net,nPointsE)$plot;
+
+## Dilution of a random germ
 DatSim3=SimDilution2(Net,nPointsE,nCopies=1000,scaleParam=0.2);
 p3=plotSim(DatSim3$values,Net,nPointsE)$plot;
 
