@@ -13,15 +13,19 @@ source("/Users/alfredo/Desktop/codes_final/sim_algorithms/Dilution1Sim.R")
 source("/Users/alfredo/Desktop/codes_final/basic_functions/plotSim.R")
 set.seed(23);
 
-
+## Chicago network
 data(chicago)
 Net=chicago$domain;
-invL=solve(laplacian(Net$m,Net$dpath));
+
+## Generate locations (4 per edge) and select interior points (2 per edge)
 nPointsE=rep(4,nsegments(Net));
 sites=genSites(nPointsE);
-q=sites[,1]*(1-sites[,1])!=0
-sites=sites[q,];
+sites=sites[sites[,1]*(1-sites[,1])!=0,];
 
+## Laplacian matrix
+invL=solve(laplacian(Net$m,Net$dpath));
+
+## Matrix of distances
 distMat=resistance_metric(nvertices(Net),nrow(sites),sites[,2],sites[,1],
                           c(invL),Net$from,Net$to,lengths_psp(Net$lines));
 
