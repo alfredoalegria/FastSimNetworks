@@ -36,12 +36,12 @@ distMat=resistance_metric(nvertices(Net),nrow(sites),sites[,2],sites[,1],
 ## Parameters
 
 scaleParam=0.2;  # correlation parameter
-nCopies=1000;    # central limit approximation
+nCopies=1000;    # M value in the central limit approximation
 nlags=26;        # number of lags for empirical variogram
 hmax=250;        # maximum distance for empirical variogram
 tol=0.8;         # distance tolerance for empirical variogram
 nrep=200;        # number of realizations
-algorithm=1;     # 1: spectral; 2=poisson_dilution; 3: germ_dilution
+algorithm=1;     # 1=spectral; 2=poisson_dilution; 3=germ_dilution
 
 lags=seq(0,hmax,l=nlags);
 vv=array(dim=c(nrep,nlags));  # it contains the empirical variograms
