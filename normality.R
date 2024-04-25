@@ -82,7 +82,7 @@ segments(B$xrange[1],B$yrange[2],B$xrange[2],B$yrange[2],col=2,lwd=3,lty=2)
 segments(B$xrange[1],B$yrange[1],B$xrange[1],B$yrange[2],col=2,lwd=3,lty=2)
 segments(B$xrange[2],B$yrange[1],B$xrange[2],B$yrange[2],col=2,lwd=3,lty=2)
 
-## Plot targeted points
+## Plot (targeted points)
 plot(Net,main="")
 box(col = "red",lty=2,lwd=2)    
 ss1=genSites(nPointsE)[id1,]
