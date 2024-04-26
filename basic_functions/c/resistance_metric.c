@@ -26,25 +26,25 @@ void resistance_metric(int *nVert,int *nsites,int *sites_e,double *sites_t,doubl
 			           if(segu!=segv){aux=0;}
 			         
 			           Sigajaj = ILM[(from[segu]-1)*(*nVert)+from[segu]-1];
-                       Sigajbj = ILM[(from[segu]-1)*(*nVert)+to[segu]-1];
-                       Sigbjbj = ILM[(to[segu]-1)*(*nVert)+to[segu]-1];
-                       Sigaiai = ILM[(from[segv]-1)*(*nVert)+from[segv]-1];
-                       Sigaibi = ILM[(from[segv]-1)*(*nVert)+to[segv]-1];
-                       Sigbibi = ILM[(to[segv]-1)*(*nVert)+to[segv]-1];
-                       Sigajai = ILM[(from[segu]-1)*(*nVert)+from[segv]-1];
-                       Sigajbi = ILM[(from[segu]-1)*(*nVert)+to[segv]-1];
-                       Sigbjai = ILM[(to[segu]-1)*(*nVert)+from[segv]-1];
-                       Sigbjbi = ILM[(to[segu]-1)*(*nVert)+to[segv]-1];
+                                   Sigajbj = ILM[(from[segu]-1)*(*nVert)+to[segu]-1];
+                                   Sigbjbj = ILM[(to[segu]-1)*(*nVert)+to[segu]-1];
+                                   Sigaiai = ILM[(from[segv]-1)*(*nVert)+from[segv]-1];
+                                   Sigaibi = ILM[(from[segv]-1)*(*nVert)+to[segv]-1];
+                                   Sigbibi = ILM[(to[segv]-1)*(*nVert)+to[segv]-1];
+                                   Sigajai = ILM[(from[segu]-1)*(*nVert)+from[segv]-1];
+                                   Sigajbi = ILM[(from[segu]-1)*(*nVert)+to[segv]-1];
+                                   Sigbjai = ILM[(to[segu]-1)*(*nVert)+from[segv]-1];
+                                   Sigbjbi = ILM[(to[segu]-1)*(*nVert)+to[segv]-1];
                        
-                       li = lenEdges[segv];
-                       lj = lenEdges[segu];
+                                   li = lenEdges[segv];
+                                   lj = lenEdges[segu];
                        
-                       vec[id] = (pow(1-tu,2.0) * Sigajaj + pow(tu,2.0) * Sigbjbj + 2*tu*(1-tu) * Sigajbj +
-                                  pow(1-tv,2.0) * Sigaiai + pow(tv,2.0) * Sigbibi + 2*tv*(1-tv) * Sigaibi -
-                                  2*(1-tu)*(1-tv) * Sigajai - 2*(1-tu)*tv * Sigajbi -
-                                  2*tu*(1-tv) * Sigbjai - 2*tu*tv * Sigbjbi +
-                                  tv*(1-tv)*li + tu*(1-tu)*lj -
-                                  2*aux*fmin(tu*(1-tv),tv*(1-tu))*li);			                                
+                                  vec[id] = (pow(1-tu,2.0) * Sigajaj + pow(tu,2.0) * Sigbjbj + 2*tu*(1-tu) * Sigajbj +
+                                             pow(1-tv,2.0) * Sigaiai + pow(tv,2.0) * Sigbibi + 2*tv*(1-tv) * Sigaibi -
+                                             2*(1-tu)*(1-tv) * Sigajai - 2*(1-tu)*tv * Sigajbi -
+                                             2*tu*(1-tv) * Sigbjai - 2*tu*tv * Sigbjbi +
+                                             tv*(1-tv)*li + tu*(1-tu)*lj -
+                                             2*aux*fmin(tu*(1-tv),tv*(1-tu))*li);			                                
 			         	  
 			  }
 			  id=id+1;
