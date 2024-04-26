@@ -13,7 +13,7 @@ set.seed(23);
 data(chicago);
 Net=chicago$domain;
 
-## Number of target points
+## Number of target points per edge
 k=2^(5:10);
 time=c();   # it will contain the execution times
 for(j in 1:length(k)){
