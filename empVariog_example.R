@@ -50,7 +50,7 @@ for(rep in 1:nrep){
    mm[rep,]=empVar(nlags,hmax,tol,zVec[q],distMat)[2,];
 }
 
-## T values of the statistical test 
+## T values of the statistical tests 
 t_value=c();  # t values for variograms
 t_value2=c(); # t values for madograms
 id=c(2,6,11,16,21,26); # lags considered (10,50,100,150,200,250)
